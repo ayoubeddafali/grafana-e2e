@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# . scripts/grafana-server/variables
+
+if [ "$BASE_URL" != "" ]; then
+    echo -e "BASE_URL set, skipping starting server"
+else
+  # Start it in the background
+  echo -e "Please set BASE_URL"
+  exit 1
+fi
+
+./e2e/run-suite "$@"

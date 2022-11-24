@@ -1,0 +1,32 @@
+{
+  "author": "Grafana Labs",
+  "license": "AGPL-3.0-only",
+  "private": true,
+  "name": "grafana",
+  "version": "9.4.0-pre",
+  "repository": "github:grafana/grafana",
+  "scripts": {
+    "e2e": "./e2e/start-and-run-suite",
+    "e2e:debug": "./e2e/start-and-run-suite debug",
+    "e2e:dev": "./e2e/start-and-run-suite dev"
+  },
+  "devDependencies": {
+    "@grafana/e2e": "workspace:*",
+    "cypress": "9.5.1",
+    "babel-loader": "9.1.0"
+  },
+  "dependencies": {
+    "@grafana/e2e-selectors": "workspace:*",
+    "@cypress/webpack-preprocessor": "5.15.2"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "plugins-bundled/internal/*"
+    ]
+  },
+  "engines": {
+    "node": ">= 16"
+  },
+  "packageManager": "yarn@3.2.4"
+}
